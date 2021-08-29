@@ -1,0 +1,70 @@
+﻿@model IEnumerable<TCC2_Sangue.Models.Doador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col text-right">
+        @Html.ActionLink("Adicionar Novo", "Novo", null, new { @class = "btn btn-info" })
+    </div>
+</div>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sangue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sangue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                @Html.ActionLink("Detalhar", "Detalhe", new { id = item.DoadorID }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Editar", "Editar", new { id = item.DoadorID }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.DoadorID }, new { @class = "btn btn-outline-danger" })
+            </div>
+
+</tr>
+}
+
+</table>

@@ -1,0 +1,73 @@
+﻿@model TCC2_Sangue.Models.Doador
+
+@{
+    ViewBag.Title = "Detalhe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhe</h2>
+
+
+    <h4>Doador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sangue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sangue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+    <div class="row">
+        <div class="col-2">
+            <a href="@Url.Action("Editar","Doador", new { id = Model.DoadorID })" class="btn btn-primary"> Editar</a>
+        </div>
+        <div class="col-2">
+            <a href="@Url.Action("Index","Doador")" class="btn btn-info"> Voltar</a>
+        </div>
+    </div>
